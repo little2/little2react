@@ -18,6 +18,7 @@ import UserPassContainer from '../containers/UserPassContainer';
 
 //合紎詳細內容
 import ContractDetailContainer from '../containers/ContractDetailContainer';
+import ContractListContainer from '../containers/ContractListContainer';
 
 
 /*
@@ -47,6 +48,8 @@ export default (
     <Route path="/UserPass" component={UserPassContainer}/>
 
 
-    <Route path="/ContractDetail" component={ContractDetailContainer}/>    
+    <Route path="/ContractDetail" component={ContractDetailContainer}/>
+    <Route path="/ContractList" component={ContractListContainer}/>
+
   </Route>
 );
