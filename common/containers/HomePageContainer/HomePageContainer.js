@@ -4,9 +4,8 @@ import HomePage from '../../components/HomePage';
 
 export default connect(
   (state) => ({
-    recipes: state.getIn(['recipe', 'recipes']),    
+    isAuthorized: state.getIn(['user', 'isAuthorized']),   
   }),
   (dispatch) => ({
   })
 )(HomePage);
-

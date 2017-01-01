@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import LoginBox from '../../components/LoginBox';
 
-import { 
+import {
   authStart,
   showSpinner,
   setUser,
@@ -24,7 +24,8 @@ export default connect(
       dispatch(authStart(dispatch, email, password));
       dispatch(showSpinner());
     },
-  }),
+  })
+  ,
   (stateProps, dispatchProps, ownProps) => {
     const { email, password } = stateProps;
     const { onLoginSubmit } = dispatchProps;
@@ -32,5 +33,5 @@ export default connect(
       onLoginSubmit: onLoginSubmit(email, password),
     });
   }
-)(LoginBox);
 
+)(LoginBox);

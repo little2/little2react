@@ -1,35 +1,52 @@
-import webpack from 'webpack';
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
+  template: `${__dirname}/client/index_client.html`,
+  filename: 'index.html',
+  inject: 'body',
+});
+
+const webpack = require('webpack')
+
+
 
 module.exports = {
   entry: [
-    './client/index.js',
+    './client/index_client.js',
   ],
   output: {
     path: `${__dirname}/dist`,
     filename: 'bundle.js',
-    publicPath: '/static/'
   },
   module: {
     preLoaders: [
       {
-        test: /\.jsx$|\.js$/,
+        test: /\.jsx$\\.js$/,
         loader: 'eslint-loader',
-        include: `${__dirname}/app`,
-        exclude: /bundle\.js$/,
-      },
+        include: `${__dirname}/src`,
+        exclude: /bundle\.js$/
+      }
     ],
-    // 優化並使用 HotModuleReplacement
-    // plugins: [
-    //   new webpack.optimize.OccurrenceOrderPlugin(),
-    //   new webpack.HotModuleReplacementPlugin()
-    // ],    
     loaders: [{
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel-loader',
-      query: {
-        presets: ['es2015', 'react', 'react-hmre'],
-      },
+    }, {
+      test: /\.css$/, // Only .css files
+      loader: 'style!css' // Run both loaders
+    },{
+      test: /\.(jpg|png)$/,
+      loader: 'url-loader?limit=100000'
     }],
   },
-};
+  devServer: {
+    inline: true,
+    port: 3000,
+    historyApiFallback: true
+  },
+  plugins: [
+    HTMLWebpackPluginConfig,
+
+  ],
+}
