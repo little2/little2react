@@ -6,6 +6,7 @@ import {
   addUsers,
   delUsers,
   setUsers,
+  getContractList
 } from '../../actions';
 
 const mapStateToProps = function(state) {  // 通常会省略第二个参数
@@ -18,7 +19,8 @@ const mapStateToProps = function(state) {  // 通常会省略第二个参数
 const mapDispatchToProps = function(dispatch) {
   return {
     onGetRow: () => (
-      dispatch(getUsers(dispatch))
+      dispatch(getContractList(dispatch))
+      //getContractList
     ),
     onAddRow: (RowsObj) => {(
       dispatch(addUsers(dispatch,RowsObj))

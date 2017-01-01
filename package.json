@@ -27,7 +27,8 @@
     "redux-actions": "^0.10.1",
     "redux-immutable": "^3.0.6",
     "redux-logger": "^2.6.1",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "reshake": "^1.0.6"
   },
   "devDependencies": {
     "axios": "^0.15.3",

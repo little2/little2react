@@ -66,6 +66,7 @@ export default class ReactBoostrapTablePlugins{
 
   }
 
+  /* 和 connect 的綁定 */
   init(object) {
     if(typeof object.props.onAddRow == "function")
     {

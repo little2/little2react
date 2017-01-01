@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import { Tabs, Tab, FormGroup, ControlLabel, FormControl, HelpBlock, Form , Panel, Checkbox, Breadcrumb }  from 'react-bootstrap';
+import { Tabs, Tab, FormGroup, ControlLabel, FormControl, HelpBlock, Form , Panel, Checkbox, Breadcrumb, ButtonToolbar, Button }  from 'react-bootstrap';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import ReactBoostrapTablePlugins from '../../utils/react-boostrap-table-plugins.js';
 class VehicleRBTP extends ReactBoostrapTablePlugins {}
@@ -157,10 +157,15 @@ export default class ContractDetail extends Component {
       <div>
       <Breadcrumb>
         <Breadcrumb.Item href="#"> Home </Breadcrumb.Item>
-        <Breadcrumb.Item href="#"> 合約查詢 </Breadcrumb.Item>
+        <Breadcrumb.Item href="/ContractList"> 合約查詢 </Breadcrumb.Item>
         <Breadcrumb.Item href="#"> 合約詳情 </Breadcrumb.Item>
-
       </Breadcrumb>
+      <ButtonToolbar className='text-right'>
+          {/* Indicates a successful or positive action */}
+          <Button bsStyle="success">儲存</Button>
+          {/* Standard button */}
+          <Button>放棄</Button>
+        </ButtonToolbar>
 
       <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
         <Tab eventKey={1} title="合約_買方資料"><ContractBuyer /></Tab>

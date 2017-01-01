@@ -13,7 +13,8 @@ import {
   SET_USERS,
   ADD_USERS,
   DEL_USERS,
-  UPD_USERS
+  UPD_USERS,
+  GET_CONTRACT_LIST
 } from '../constants/actionTypes';
 
 export const authStart = createAction('AUTH_START', WebAPI.login);
@@ -27,3 +28,6 @@ export const setUsers = createAction('SET_USERS', usersWebContainer.setWebUsers)
 export const getUsers = createAction('GET_USERS', usersWebContainer.getWebUsers);
 export const addUsers = createAction('ADD_USERS', usersWebContainer.addWebUsers);
 export const delUsers = createAction('DEL_USERS', usersWebContainer.delWebUsers);
+
+
+export const getContractList = createAction('GET_CONTRACT_LIST', usersWebContainer.getWebContractList);

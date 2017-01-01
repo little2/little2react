@@ -3,7 +3,12 @@ import ReactDOM from 'react-dom';
 import { ButtonGroup, Button }  from 'react-bootstrap';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import ReactBoostrapTablePlugins from '../../utils/react-boostrap-table-plugins.js';
-class VehicleRBTP extends ReactBoostrapTablePlugins {}
+class VehicleRBTP extends ReactBoostrapTablePlugins {
+  onRowClick(rows)
+  {
+    location.href='/ContractDetail';
+  }
+}
 let RBTP = new VehicleRBTP();
 
 export default class ContractList extends Component {
@@ -25,9 +30,9 @@ export default class ContractList extends Component {
         searchPlaceholder='請輸入查詢的關鍵字...'
         selectRow={{ mode: 'checkbox' }}
       >
-        <TableHeaderColumn dataField='userId' isKey className="td-plugins-hidden">使用者編號</TableHeaderColumn>
-        <TableHeaderColumn dataField='userName'>使用者姓名</TableHeaderColumn>
-        <TableHeaderColumn dataField='password' hidden>密碼</TableHeaderColumn>
+        <TableHeaderColumn dataField='contractId' isKey className="td-plugins-hidden">合約號碼</TableHeaderColumn>
+        <TableHeaderColumn dataField='dealerId'>專分銷代號</TableHeaderColumn>
+        <TableHeaderColumn dataField='createDate' >合約日期</TableHeaderColumn>
       </BootstrapTable>
     );
   }

@@ -10,6 +10,15 @@ import {
 
 
 export default {
+  getWebContractList: (dispatch) => {
+    //假数据
+    var FakeObjectDataListStore = require('../../helpers/FakeObjectDataListStore');
+    let recipes2= new FakeObjectDataListStore(5,"userpass").getAll();
+    return {rows:recipes2};
+
+  },
+
+
   // 取得用户列表
   getWebUsers: (dispatch) => {
     //假数据
