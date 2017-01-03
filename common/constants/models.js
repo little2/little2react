@@ -49,3 +49,13 @@ export const UsersStore  = Immutable.fromJS({
   userPower: 0,
   lastUpdateDate: '',
 });
+
+
+export const InventoryState = Immutable.fromJS({
+  inventoryRows:[],
+  currentInput: '',
+  password: '',
+  loginStatus: '',
+  keyframe: 100,
+  shakeFixed:false
+});

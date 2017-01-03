@@ -152,7 +152,7 @@ const renderFullPage = (html, preloadedState) => (
     <html>
       <head>
         <title>Redux Universal Example</title>
-
+		    <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" src="node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
     		<script src="/static/jquery-2.1.3.min.js"></script>

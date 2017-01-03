@@ -26,7 +26,7 @@ const AppBar = ({
         ) :
         (
           <Nav pullRight>
-            <NavItem eventKey={1} href="/Dealer">專分銷</NavItem>
+            <NavItem eventKey={1}  href="/Dealer">專分銷</NavItem>
             <NavDropdown eventKey={2} title="新車庫存" id="basic-nav-dropdown" >
               <MenuItem eventKey={2.1} href="/Vehicleinventory">新車庫存修改</MenuItem>
               <MenuItem divider />

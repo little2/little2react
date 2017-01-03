@@ -18,6 +18,22 @@ export default {
 
   },
 
+  getWebDealerList: (dispatch) => {
+    //假数据
+    var FakeObjectDataListStore = require('../../helpers/FakeObjectDataListStore');
+    let recipes2= new FakeObjectDataListStore(5,"dealer").getAll();
+    return {rows:recipes2};
+
+  },
+
+  getInventoryList: (dispatch) => {
+    //假数据
+    var FakeObjectDataListStore = require('../../helpers/FakeObjectDataListStore');
+    let recipes2= new FakeObjectDataListStore(15,"vehicleinventory").getAll();
+    return {rows:recipes2};
+
+  },
+
 
   // 取得用户列表
   getWebUsers: (dispatch) => {

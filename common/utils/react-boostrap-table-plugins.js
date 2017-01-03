@@ -12,6 +12,9 @@ export default class ReactBoostrapTablePlugins{
      this.config = {
        keyName:'',
        column: {},
+       saveAfterEdit: true,
+       insertButtonVisible: true,  //是否出現在工具列出現新增按鈕
+       editModalText: "編輯資料",
      };
 
      this.BootStrapTableObj = {} ;
@@ -88,7 +91,10 @@ export default class ReactBoostrapTablePlugins{
       this.BootStrapTableObj=object.refs.BootstrapTabletableRef;
     }
 
-
+    if(this.config.insertButtonVisible==false)
+    {
+      $('.react-bs-table-add-btn').addClass('hide');
+    }
 
 
 
@@ -209,7 +215,7 @@ export default class ReactBoostrapTablePlugins{
 
 
   onRowClick(rows) {
-
+    let parentThis=this.classThis;
 
 
     if ($(".editModal0").length <=0){
@@ -229,15 +235,15 @@ export default class ReactBoostrapTablePlugins{
       let modalObj=$('.react-bs-table-add-btn').attr('data-target');
       let newModalObj=$(modalObj).clone();
       newModalObj.removeClass((modalObj.replace('.',''))).addClass('editModal0');
-      $('.modal-title',newModalObj).text("編輯資料");
+      $('.modal-title',newModalObj).text(parentThis.config.editModalText);
 
       /* 更新資料按鈕 */
-      $('.btn-primary',newModalObj).attr('id','bt_update');
 
-      let parentThis=this.classThis;
+
+
       //console.log(parentThis);
 
-
+      $('.btn-primary',newModalObj).attr('id','bt_update');
       $('.btn-primary',newModalObj).click(function(e){
           let editRows={};
           //代入表格中的數據
@@ -257,6 +263,15 @@ export default class ReactBoostrapTablePlugins{
         }
       );
 
+      if(parentThis.config.saveAfterEdit==false)
+      {
+        $('.btn-primary',newModalObj).addClass('hide');
+      }
+
+
+
+
+
       /* 生成editModal0 */
       $(modalObj).parent().append(newModalObj);
 
@@ -264,7 +279,7 @@ export default class ReactBoostrapTablePlugins{
 
       // this.BootStrapTableObj.props.children;
       let ColsProps=parentThis.BootStrapTableObj.props.children;
-      console.log(ColsProps);
+
       for (let index in ColsProps)
       {
           let datafield= ColsProps[index].props.dataField;

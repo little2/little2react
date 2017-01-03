@@ -1,0 +1,40 @@
+
+==== 新增一個Component
+
+
+Container
+
+* 新增 dispatch ( 動作 )
+* import ( 動作 ) from '../actions'
+
+
+Component
+
+
+common/routes
+
+
+actions
+
+* 動作 = createAction ( 動作常數 , payload 函式 )
+
+actionTypes
+
+* 新增 （動作常數)
+
+
+common / utils / api ==> payload 函式 => 回到 Reducer
+（資料來源）
+* 新增函式 ( payload 函式 )
+* import ( 動作 ) from '../actions'
+
+common / Reducer
+
+* 新增 （動作常數) 所要處理的工作 => 返回值給 Container (mapStateToProps)
+- 新增 Reducer
+- 添加進 /reducer/index.js
+- 綁定新的 store
+
+Store
+
+-新增 common / constants / models.js

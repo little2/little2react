@@ -28,3 +28,6 @@ export const STOP_INPUT_SHAKE = 'STOP_INPUT_SHAKE';
 
 //合約
 export const GET_CONTRACT_LIST = 'GET_CONTRACT_LIST';
+
+//庫存
+export const GET_INVENTORY_LIST = 'GET_INVENTORY_LIST';

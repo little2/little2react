@@ -14,6 +14,10 @@ import DispatchLogContainer from '../containers/DispatchLogContainer';
 import ModelContainer from '../containers/ModelContainer';
 import VendorContainer from '../containers/VendorContainer';
 import UserPassContainer from '../containers/UserPassContainer';
+import MobileControlPanel from '../containers/MobileControlPanelContainer';
+import MobileVehicleInventory from '../containers/MobileVehicleInventoryContainer';
+import MobileDispatch from '../containers/MobileDispatchContainer';
+import MobileRecall from '../containers/MobileRecallContainer';
 
 
 //合紎詳細內容
@@ -46,6 +50,11 @@ export default (
     <Route path="/Vendor" component={VendorContainer}/>
     <Route path="/LoginInstant" component={LoginInstantContainer}/>
     <Route path="/UserPass" component={UserPassContainer}/>
+    <Route path="/MobileControlPanel" component={MobileControlPanel}/>
+    <Route path="/MobileVehicleInventory" component={MobileVehicleInventory}/>
+    <Route path="/MobileDispatch" component={MobileDispatch}/>
+    <Route path="/MobileRecall" component={MobileRecall}/>
+
 
 
     <Route path="/ContractDetail" component={ContractDetailContainer}/>

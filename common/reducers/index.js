@@ -5,6 +5,8 @@ import recipe from './data/recipeReducers';
 import user from './data/userReducers';
 import loginInstant from './data/loginInstantReducers';
 import userInfo from './data/usersReducers';
+import inventory from './data/inventoryReducers';
+
 
 
 const rootReducer = combineReducers({
@@ -13,7 +15,7 @@ const rootReducer = combineReducers({
   user,
   loginInstant,
   userInfo,
-
+  inventory
 });
 
 export default rootReducer;

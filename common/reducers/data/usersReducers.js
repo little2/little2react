@@ -16,6 +16,14 @@ const usersReducers = handleActions({
   GET_CONTRACT_LIST: (state, { payload }) => {
     return state.set('userRows',payload.rows);
   },
+  GET_DEALER_LIST: (state, { payload }) => {
+    return state.set('userRows',payload.rows);
+  },
+
+
+
+
+
   SET_USERS: ( state, { payload } ) => {
 
     state.get('userRows').forEach(function(value,index){
